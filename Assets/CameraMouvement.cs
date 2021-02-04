@@ -10,12 +10,14 @@ public class CameraMouvement : MonoBehaviour
     public Rigidbody rbCamera;
 
     public Boolean declenchement;
+    
 
     // Start is called before the first frame update
     void Start()
     {
        corps =  GameObject.Find("corps");
        rbCamera = gameObject.GetComponent<Rigidbody>();
+       
 
     }
 
@@ -23,10 +25,14 @@ public class CameraMouvement : MonoBehaviour
     void Update()
     {
         gameObject.transform.LookAt(corps.transform);
+       
+        
+        // Déclenchement du suivi par la caméra uniquement
+        // si le joueur démarre sinon la caméra avance et lui rentre dedans
         if (declenchement)
         {
             rbCamera.AddForce(corps.transform.position - gameObject.transform.position);
-            rbCamera.AddForce(-rbCamera.velocity * 0.8f);
+            rbCamera.AddForce(-rbCamera.velocity * 0.6f);
         }
 
     }
