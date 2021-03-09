@@ -1,9 +1,9 @@
 # projet-MAR
 
-Déplacements :
+# Déplacements :
 
-Flèche du haut pour avancer
+- Flèche du haut pour avancer
 
-Flèches gauche et droite pour se déplacer latéralement
+- Flèches gauche et droite pour se déplacer latéralement
 
-Touche Espace pour freiner
+- Touche Espace pour freiner
