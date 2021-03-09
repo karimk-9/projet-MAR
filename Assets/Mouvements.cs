@@ -84,7 +84,8 @@ public class Mouvements : MonoBehaviour
         // Obtain the current time.
         currentTime = Time.time.ToString("f6");
         GameObject.Find("ski1").GetComponent<reaction>().setScore(currentTime);
-        currentTime = "Temps écoulé : " + currentTime + " sec.";
+       
+        currentTime = "Temps écoulé : " + currentTime + " secondes";
 
         // Display the current time.
         if (!reaction.activation)

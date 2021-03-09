@@ -10,6 +10,9 @@ public class reaction : MonoBehaviour
     public GameObject piste;
     public static Boolean activation;
     private string score;
+    private int width, height;
+    private Rect rect;
+    private GUIStyle labelStyle;
     private void OnCollisionEnter(Collision collision)
     {
         camera = GameObject.Find("Main Camera");
@@ -37,9 +40,21 @@ public class reaction : MonoBehaviour
 
     public void OnGUI()
     {
+        
+        
         if (activation)
         {
-            GUI.Label(new Rect(10, 10, 100, 20), score);
+            width = Screen.width;
+            height = Screen.height;
+            rect = new Rect(10, 10, width - 20, height - 20);
+            labelStyle = new GUIStyle(GUI.skin.GetStyle("label"));
+            labelStyle.alignment = TextAnchor.MiddleCenter;
+
+            labelStyle.fontSize = 12 * (width / 200);
+            
+            
+            GUI.Label(rect, score, labelStyle);
+           
         }
         
         
@@ -49,7 +64,7 @@ public class reaction : MonoBehaviour
     {
         if (!activation)
         {
-            this.score = score;
+            this.score = "Score :"+ score+ " secondes";
         }
     }
 }
