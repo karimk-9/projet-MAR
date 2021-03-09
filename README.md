@@ -1,5 +1,3 @@
-# projet-MAR
-
 # Déplacements :
 
 - Flèche du haut pour avancer
